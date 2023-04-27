@@ -34526,7 +34526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3020366305579149210, guid: ed63680e020234540b4a593aa370430c, type: 3}
       propertyPath: m_sensivity
-      value: 1000
+      value: 2500
       objectReference: {fileID: 0}
     - target: {fileID: 3020366305579149212, guid: ed63680e020234540b4a593aa370430c, type: 3}
       propertyPath: near clip plane
@@ -54852,7 +54852,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39156
+  m_Name: pb_Mesh25024
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -57212,7 +57212,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh38148
+  m_Name: pb_Mesh24006
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
