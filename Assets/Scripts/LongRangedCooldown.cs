@@ -12,6 +12,8 @@ public class LongRangedCooldown : MonoBehaviour
     public float cooldownTotal = 10f;
     public KeyCode m_long;
     public Slider meterSlider;
+
+
     void Start()
     {
         longOnCooldown = false;

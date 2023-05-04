@@ -52,7 +52,6 @@ public class FPSMovement : MonoBehaviour
     {
         m_finalSpeed = m_movementSpeed;
         m_charController.height = 1.8f;
-        
     }
 
     void Update()
@@ -121,6 +120,8 @@ public class FPSMovement : MonoBehaviour
     // MovePlayer
     void MovePlayer(Vector3 move)
     {
+  
+        //Debug.Log(m_velocity.y);
         m_charController.Move(move * m_finalSpeed * Time.deltaTime); // Moves the Gameobject using the Character Controller
 
         m_velocity.y += m_gravity * Time.deltaTime; // Gravity affects the jump velocity

@@ -2,20 +2,29 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LongRangedTeleport : MonoBehaviour
 {
+    private GameObject Player;
     public Transform playerPos;
     public bool longOnCooldown;
     private float baseCooldown;
-    public float longCooldown = 10f;
+    public float longCooldown = 8f;
+    private float longCooldownTotal;
     public KeyCode m_long;
     private Vector3 teleLDestination;
-    public GameObject Player;
+    
+    public float longTeleRange = 1000f;
+    public Slider meterSliderLong;
+
+    public LayerMask layers;
 
     void Start()
     {
+        Player = this.gameObject;
         longOnCooldown = false;
+        longCooldownTotal = longCooldown;
     }
     void LongTeleport()
     {
@@ -23,7 +32,7 @@ public class LongRangedTeleport : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Finding point to teleport to
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 1000))
+            if (Physics.Raycast(ray, out hit, longTeleRange, layers))
             {
                 if ((hit.collider.CompareTag("Ceiling")) || (hit.collider.CompareTag("LeadCeiling")))
                 {
@@ -42,7 +51,10 @@ public class LongRangedTeleport : MonoBehaviour
         }
         else if (longOnCooldown == true) // Cooldown calculations
         {
+            float percentageResult = baseCooldown / longCooldownTotal;
+            meterSliderLong.value = percentageResult;
             baseCooldown -= Time.deltaTime;
+
             if (baseCooldown <= 0)
             {
                 longOnCooldown = false;

@@ -8,6 +8,12 @@ TagManager:
   - Ceiling
   - LeadCeiling
   - LeadWall
+  - LeadGround
+  - Interact
+  - Collectable
+  - Carryable
+  - StartPoint
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
@@ -17,8 +23,8 @@ TagManager:
   - UI
   - Ground
   - Wall
-  - 
-  - 
+  - PostProc
+  - LRTNoBlock
   - 
   - 
   - 
