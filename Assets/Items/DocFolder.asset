@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608692bd0ae5233498960fbccdd97354, type: 3}
   m_Name: DocFolder
   m_EditorClassIdentifier: 
-  g_name: Enter Item Name...
+  g_name: Classified Documents
   g_sprite: {fileID: 0}

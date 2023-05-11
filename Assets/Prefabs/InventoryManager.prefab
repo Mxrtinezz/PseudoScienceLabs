@@ -50,4 +50,4 @@ MonoBehaviour:
   invCanvas: {fileID: 0}
   g_inventoryPanel: {fileID: 0}
   g_slots: []
-  inventoryKey: 0
+  inventoryKey: 9

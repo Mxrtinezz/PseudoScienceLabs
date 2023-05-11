@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class ShortRangedTeleport : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class ShortRangedTeleport : MonoBehaviour
     // UI SECTION
     public Slider meterSliderShort;
 
+    public LayerMask sLayers;
+
     void Start()
     {
         shortOnCooldown = false;
@@ -34,13 +37,21 @@ public class ShortRangedTeleport : MonoBehaviour
         if (Input.GetKey(m_short) && shortOnCooldown == false) // Activates Short-Ranged Teleportation if not on cooldown
         {
             if (cannotShortTele == false) // Checks a bool set by the CheckAhead.cs script - looking for bad tele outcomes.
+            
             {
-                Player.SetActive(false);
-                playerPos.transform.position = shortTeleTarget.position;
-                Player.SetActive(true);
-                Player.GetComponent<FPSMovement>().m_velocity.y = 0f; // ensures player velocity vertically is reset.
-                shortOnCooldown = true; // Enters a 'cooldown' state.
-                baseCooldown = shortCooldown; // Cooldown time reset
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); // Finding point to teleport to
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit, 5.0f, sLayers)) // CHANGE the 5.0f if you need to adjust your short tele range!
+                {
+                    // Nothing happens if it hits anything in your sLayers list of layers - Like 'Lead'
+                }
+                else
+                {
+                    ActualShortTeleport();
+                }
+
+
+
             }
         }
         if (shortOnCooldown == true) // Cooldown calculations
@@ -53,5 +64,15 @@ public class ShortRangedTeleport : MonoBehaviour
                 shortOnCooldown = false;
             }
         }
+    }
+
+    void ActualShortTeleport()
+    {
+        Player.SetActive(false);
+        playerPos.transform.position = shortTeleTarget.position;
+        Player.SetActive(true);
+        Player.GetComponent<FPSMovement>().m_velocity.y = 0f; // ensures player velocity vertically is reset.
+        shortOnCooldown = true; // Enters a 'cooldown' state.
+        baseCooldown = shortCooldown; // Cooldown time reset
     }
 }

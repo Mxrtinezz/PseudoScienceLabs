@@ -108,17 +108,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 5369045992556719698}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33e5c394cdcb8bb449811a29fec7020e, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f2f5cfbb5d8bf34b969f1012cd95a83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialMessage: '[E] Read files'
   popupTexts:
-  - herpy
-  - derpy
-  - woo!
-  - Final message in loop
+  - These labs are dangerous... I should leave.
+  - One of the experiments I read about is right there, maybe that can help.
   keyToAdvanceText: 101
   textField: {fileID: 0}
   textFieldObject: {fileID: 0}
+  isRepeatableMessage: 0
+  onTextExhausted: {fileID: 11400000, guid: ac4712e7962d05c41b25ed20f627b997, type: 2}
 --- !u!1 &7933844750705726418
 GameObject:
   m_ObjectHideFlags: 0
