@@ -12,8 +12,11 @@ public class MoveWithObject : MonoBehaviour
         {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+
     }
-    private void OnTriggerEnter(Collider other)
+
+
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject == player)
         {
@@ -23,10 +26,13 @@ public class MoveWithObject : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        Debug.Log("Something exited");
         if (other.gameObject == player)
         {
-            player.transform.parent= null; // unties the player's transform from this object's transform.
+            Debug.Log("IT WAS DA PLAYA");
+            player.transform.parent = null; // unties the player's transform from this object's transform.
         }
     }
+
 
 }

@@ -68,6 +68,7 @@ public class ShortRangedTeleport : MonoBehaviour
 
     void ActualShortTeleport()
     {
+        gameObject.transform.parent = null;
         Player.SetActive(false);
         playerPos.transform.position = shortTeleTarget.position;
         Player.SetActive(true);

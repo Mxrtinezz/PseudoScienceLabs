@@ -69,6 +69,7 @@ public class LongRangedTeleport : MonoBehaviour
 
     void LTeleport()
     {
+        gameObject.transform.parent = null;
         Debug.Log("LTeleport to " + teleLDestination);
         Player.SetActive(false);
         playerPos.transform.position = teleLDestination; // Teleport

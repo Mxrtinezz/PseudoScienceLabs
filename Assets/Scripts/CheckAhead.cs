@@ -18,6 +18,7 @@ public class CheckAhead : MonoBehaviour
     {
         Collider[] objs;
         objs = Physics.OverlapSphere(transform.position, 0.1f);
+        //Debug.Log("Number of overlaps: " + objs.Length);
         foreach (Collider c in objs)
         {
             if ((c.gameObject.CompareTag("Wall")) || (c.gameObject.CompareTag("LeadWall")) || (c.gameObject.CompareTag("LeadCeiling")))
