@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PseudoScienceLabs.unity
+    guid: 6b39d9f7bf36cf941afa8c38e635a6da
   m_configObjects: {}
